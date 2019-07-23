@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "underscore": "^1.9.1",
+    "web-ext-types": "^3.2.1",
     "webextension-polyfill": "^0.3.1"
   },
   "devDependencies": {
