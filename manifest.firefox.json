@@ -1,19 +1,19 @@
 {
-  "name": "Tab Counter",
+  "name": "Tab Counter (fork)",
   "short_name": "Tab Counter",
-  "author": "DaAwesomeP",
+  "author": "vhfmag",
   "developer": {
-    "name": "DaAwesomeP",
-    "url": "https://addons.mozilla.org/en-US/firefox/user/DaAwesomeP/"
+    "name": "vhfmag",
+    "url": "https://addons.mozilla.org/en-US/firefox/user/vhfmag/"
   },
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "A button badge that shows the number of tabs open in a window",
-  "homepage_url": "https://github.com/DaAwesomeP/tab-counter",
+  "homepage_url": "https://github.com/vhfmag/tab-counter",
   "manifest_version": 2,
   "applications": {
     "gecko": {
-      "id": "tab-counter@daawesomep.addons.mozilla.org",
-      "strict_min_version": "52.0"
+      "id": "tab-counter@vhfmag.addons.mozilla.org",
+      "strict_min_version": "55.0"
     }
   },
   "icons": {
