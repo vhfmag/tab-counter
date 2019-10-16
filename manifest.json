@@ -6,7 +6,7 @@
     "name": "vhfmag",
     "url": "https://addons.mozilla.org/en-US/firefox/user/vhfmag/"
   },
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "A button badge that shows the number of tabs open in a window",
   "homepage_url": "https://github.com/vhfmag/tab-counter",
   "manifest_version": 2,
