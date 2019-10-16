@@ -4,8 +4,9 @@
       "@babel/preset-env",
       {
         "useBuiltIns": "usage",
+        "shippedProposals": true,
         "targets": {
-          "firefox": "60"
+          "firefox": "63"
         }
       }
     ]

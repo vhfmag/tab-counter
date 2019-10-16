@@ -18,7 +18,7 @@
  * limitations under the License.
  */
 
-import { debounce } from 'underscore'
+import debounce from 'lodash/debounce'
 
 const updateIcon = async function updateIcon () {
   // Get settings

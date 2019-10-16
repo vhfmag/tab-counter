@@ -68,13 +68,13 @@ gulp.task('compile', gulp.parallel(() => {
 }))
 
 gulp.task('pack', () => {
-  return gulp.src(['dist/**/*', '!dist/**/*.map', 'node_modules/underscore/**/*', 'icons/**/clear-*.png', 'icons/**/*.min.svg', 'manifest.json', 'LICENSE'], { base: '.' })
+  return gulp.src(['dist/**/*', '!dist/**/*.map', 'node_modules/lodash/**/*', 'icons/**/clear-*.png', 'icons/**/*.min.svg', 'manifest.json', 'LICENSE'], { base: '.' })
     .pipe(zip('tab-counter.firefox.zip'))
     .pipe(gulp.dest('build'))
 })
 
 gulp.task('watch', gulp.series('checkSafe', 'compile', () => {
-  return gulp.watch(['src/**/*', 'node_modules/webextension-polyfill/**/*', 'node_modules/underscore/**/*', 'icons/**/*', 'manifest.json', 'package.json'], gulp.parallel('checkSafe', 'compile'))
+  return gulp.watch(['src/**/*', 'node_modules/webextension-polyfill/**/*', 'node_modules/lodash/**/*', 'icons/**/*', 'manifest.json', 'package.json'], gulp.parallel('checkSafe', 'compile'))
 }))
 
 gulp.task('dist', gulp.series('static', 'check', 'clean', 'compile'))
