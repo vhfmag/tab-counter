@@ -4,8 +4,9 @@
       "@babel/preset-env",
       {
         "useBuiltIns": "usage",
-        "modules": "commonjs",
-        "debug": false
+        "targets": {
+          "firefox": "60"
+        }
       }
     ]
   ]
