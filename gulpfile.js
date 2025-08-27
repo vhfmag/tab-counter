@@ -24,7 +24,6 @@ const lec = require('gulp-line-ending-corrector')
 const bro = require('gulp-bro')
 const babelify = require('babelify')
 const eslint = require('gulp-eslint')
-const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps')
 const zip = require('gulp-zip')
 
@@ -68,28 +67,14 @@ gulp.task('compile', gulp.parallel(() => {
     .pipe(gulp.dest('dist'))
 }))
 
-gulp.task('pack', gulp.parallel(() => {
-  return gulp.src(['dist/**/*', '!dist/**/*.map', 'node_modules/underscore/**/*', 'icons/**/clear-*.png', 'icons/**/*.min.svg', 'manifest.firefox.json', 'LICENSE'], { base: '.' })
-    .pipe(rename(path => {
-      if (path.basename === 'manifest.firefox') {
-        path.basename = 'manifest'
-      }
-    }))
+gulp.task('pack', () => {
+  return gulp.src(['dist/**/*', '!dist/**/*.map', 'node_modules/lodash/**/*', 'icons/**/clear-*.png', 'icons/**/*.min.svg', 'manifest.json', 'LICENSE'], { base: '.' })
     .pipe(zip('tab-counter.firefox.zip'))
     .pipe(gulp.dest('build'))
-}, () => {
-  return gulp.src(['dist/**/*.js', 'dist/**/*.html', 'node_modules/webextension-polyfill/dist/browser-polyfill.js', 'node_modules/underscore/underscore.js', 'icons/**/*.png', 'icons/**/*.min.svg', 'manifest.opera.json', 'LICENSE'], { base: '.' })
-    .pipe(rename(path => {
-      if (path.basename === 'manifest.opera') {
-        path.basename = 'manifest'
-      }
-    }))
-    .pipe(zip('tab-counter.opera.zip'))
-    .pipe(gulp.dest('build'))
-}))
+})
 
 gulp.task('watch', gulp.series('checkSafe', 'compile', () => {
-  return gulp.watch(['src/**/*', 'node_modules/webextension-polyfill/**/*', 'node_modules/underscore/**/*', 'icons/**/*', 'manifest.json', 'package.json'], gulp.parallel('checkSafe', 'compile'))
+  return gulp.watch(['src/**/*', 'node_modules/webextension-polyfill/**/*', 'node_modules/lodash/**/*', 'icons/**/*', 'manifest.json', 'package.json'], gulp.parallel('checkSafe', 'compile'))
 }))
 
 gulp.task('dist', gulp.series('static', 'check', 'clean', 'compile'))

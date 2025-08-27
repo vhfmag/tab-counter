@@ -4,8 +4,10 @@
       "@babel/preset-env",
       {
         "useBuiltIns": "usage",
-        "modules": "commonjs",
-        "debug": false
+        "shippedProposals": true,
+        "targets": {
+          "firefox": "63"
+        }
       }
     ]
   ]
