@@ -67,7 +67,7 @@ const updateIcon = async function updateIcon () {
 
     // Update the tooltip
     browser.browserAction.setTitle({
-      title: `Tab Counter\nTabs in this window:  ${currentWindow}\nTabs in all windows: ${allTabs}\nNumber of windows: ${allWindows}`,
+      title: `Tab Counter\nTabs in this window:  ${tabsInCurrentWindow}\nTabs in all windows: ${allTabs}\nNumber of windows: ${allWindows}`,
       windowId: currentWindow.id
     })
   }
